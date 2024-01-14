@@ -29,13 +29,16 @@ public class EmployeeService {
     }
     public void remove (String firstName, String lastName){
         var it = employees.iterator();
+        boolean removed = false;
         while (it.hasNext()){
             var employee = it.next();
             if(employee.getFirstName().equals(firstName) && employee.getLastName().equals(lastName)){
                 it.remove();
+                removed = true;
             }
         }
-        throw new EmployeeNotFoundException();
+        if (!removed) {
+            throw new EmployeeNotFoundException();}
     }
     public Employee find(String firstName, String lastName){
         for (Employee employee : employees) {
