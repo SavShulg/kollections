@@ -1,4 +1,4 @@
 package com.collections.demo.exceptions;
 
-public class EmployeeStorageIsFullException {
+public class EmployeeStorageIsFullException extends RuntimeException{
 }
