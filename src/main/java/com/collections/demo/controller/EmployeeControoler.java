@@ -23,12 +23,18 @@ public class EmployeeControoler {
     }
 
     @GetMapping ("/add")
-    public void add(@RequestParam String firstName, @RequestParam String lastName){
-        service.add(firstName, lastName);
+    public void add(@RequestParam String firstName,
+                    @RequestParam String lastName,
+                    @RequestParam int salary,
+                    @RequestParam int department){
+        service.add(firstName, lastName, salary,department);
     }
     @GetMapping ("/remove")
-    public void remove(@RequestParam String firstName,@RequestParam String lastName){
-service.remove(firstName, lastName);
+    public void remove(@RequestParam String firstName,
+                       @RequestParam String lastName,
+                       @RequestParam int salary,
+                       @RequestParam int department){
+service.remove(firstName, lastName,salary,department);
     }
     @GetMapping ("/find")
     public Employee find(@RequestParam String firstName, @RequestParam String lastName){
