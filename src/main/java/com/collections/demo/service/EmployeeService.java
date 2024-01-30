@@ -53,7 +53,7 @@ public class EmployeeService {
         return Collections.unmodifiableCollection(employees.values());
     }
     private static String makeKey(String firstName, String lastName) {
-        return (firstName + "_" + lastName).toLowerCase();
+        return (firstName + "-" + lastName).toLowerCase();
     }
 }
 
